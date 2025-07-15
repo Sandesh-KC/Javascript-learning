@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=], initial-scale=1.0">
+  <title>Calculator</title>
+  <style>
+    h1{
+      font-weight: bold;
+      text-align: center;
+      color: white;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    body{
+      background-color: black;
+    }
+    button{
+      height: 50px;
+      width: 50px;
+      border-radius: 100%;
+      background-color: orange;
+      color: white;
+      font-weight: bold;
+      border: white;
+      font-size: 1rem;
+    }
+    #main{
+      text-align: center;
+    }
+    #result{
+      margin: 0 auto;
+      display: flex;
+      color: black;
+      font-weight: bold;
+      font-size: 1.4rem;
+      height: 50px;
+      background-color: aliceblue;
+      width: 200px;
+      justify-content: center;
+      align-items: center;
+      border-radius: 5%;
+    }
+    button:hover{
+      background-color: darkgoldenrod;
+    }
+
+  </style>
+</head>
+<body>
+  <h1>Sandesh calculator</h1>
+
+  <div id="result"></div>
+  <br>
+
+  <div id="main">
+    <button onclick="calculation += '1'; document.getElementById('result').innerText = calculation;">1</button>
+    <button onclick="calculation += '2'; document.getElementById('result').innerText = calculation;" >2</button>
+    <button onclick="calculation += '3'; document.getElementById('result').innerText = calculation;">3</button>
+    <button onclick="calculation += ' + '; document.getElementById('result').innerText = calculation;">+</button>
+    <br>
+    <br>
+    <button onclick="calculation += '4'; document.getElementById('result').innerText = calculation;">4</button>
+    <button onclick="calculation +='5'; document.getElementById('result').innerText = calculation;">5</button>
+    <button onclick="calculation += '6'; document.getElementById('result').innerText = calculation;">6</button>
+    <button onclick="calculation += ' - '; document.getElementById('result').innerText = calculation;">-</button>
+    <br>
+    <br>
+    <button onclick="calculation += '7'; document.getElementById('result').innerText = calculation;">7</button>
+    <button onclick="calculation += '8'; document.getElementById('result').innerText = calculation;">8</button>
+    <button onclick="calculation += '9'; document.getElementById('result').innerText = calculation;">9</button>
+    <button onclick="calculation += ' * '; document.getElementById('result').innerText = calculation;">*</button>
+    <br>
+    <br>
+    <button onclick="calculation += '0'; document.getElementById('result').innerText = calculation;">0</button>
+    <button onclick="calculation += '.'; document.getElementById('result').innerText = calculation;">.</button>
+    <button onclick="calculation += ' / '; document.getElementById('result').innerText = calculation;">/</button>
+    <button onclick="calculation = eval(calculation); document.getElementById('result').innerText = calculation;">=</button>
+    <br> <br> <br>
+    <button onclick="calculation=''; document.getElementById('result').innerText = '';">Clear</button>
+  </div>
+  
+  <script>
+    let calculation = '';
+
+  </script>
+</body>
+</html>
