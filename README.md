@@ -4,7 +4,7 @@ This repository contains my practice codes and experiments as I learn JavaScript
 
 ## Projects
 
-- **calculator-basic**: A simple calculator with UI and basic arithmetic.
+- **Calculator-basic**: A simple calculator with UI and basic arithmetic.
 - **RockPaperScissors game**: Still in progress.
   
 ## Notes
