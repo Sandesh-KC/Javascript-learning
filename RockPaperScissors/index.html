@@ -17,23 +17,27 @@
       playGame ('Scissors');
     ">Scissors</button>
 
+    <p class="js-result"></p>
+    <p class="js-move"></p>
+    <p class="js-score"></p>
+
     <button onclick="
     score.wins = 0;
     score.losses = 0;
     score.ties = 0;
     localStorage.removeItem('score');
-    alert ('Score reset!');
+    updateScoreElement ();
     ">Reset</button>
 
-    <button onclick="
-    alert(`Wins: ${score.wins}, Losses: ${score.losses} Ties:${score.ties}`);
-    ">Show score</button>
-
     <script>
+      //getting score from localstorage and also setting default value
       let score = JSON.parse(localStorage.getItem ('score')) || { wins: 0,
       losses: 0,
       ties: 0
       };
+
+      //calling function to display score
+      updateScoreElement ();
 
       /*
       if(!score) {
@@ -47,9 +51,9 @@
 
       let result = '';
 
+      //function to compare computer move with user input
       function playGame(playerMove) {
         const computerMove = pickCompMove();
-      // console.log(pickCompMove()); //return fuction
       if (playerMove === 'Scissors') {
         if (computerMove === 'Rock') {
           result = 'You loose.';
@@ -87,13 +91,23 @@
         score.ties++;
       }
 
-      // local storage
+      // this is for local storage
       localStorage.setItem ('score', JSON.stringify(score));
 
-        alert(`You picked ${playerMove}. Computer picked ${computerMove}. ${result}
-Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`);
+      // calling function to display score
+      updateScoreElement ();
+
+      //this is to display results in other <p>
+      document.querySelector('.js-result').innerHTML =  result;
+      document.querySelector('.js-move').innerHTML = `You: ${playerMove} ------- Computer: ${computerMove}`;
       }
 
+      //function to display score in <p>
+      function updateScoreElement () {
+        document.querySelector('.js-score').innerHTML = `Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`;
+      };
+
+      //function to determine pick of computer
       function pickCompMove () {
       const randomNumber = Math.random();
       let computerMove = '';
@@ -106,8 +120,6 @@ Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`);
         computerMove = 'Scissors';
       }
       return computerMove;
-      // return 5; //return stops function from running from next line
-      // return console.log('hello'); //the function will not run and display this 
       }
     </script>
   </body>
