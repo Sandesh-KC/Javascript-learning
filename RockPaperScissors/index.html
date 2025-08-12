@@ -7,39 +7,30 @@
   <body>
     <h1>Rock Paper Scissors</h1>
     <div class="player-choice">
-    <button class="player" onclick="
-      playGame ('Rock');
-    "><img src="Assets/rock.png" class="game-move"></button>
+      <button class="player js-rock-button">
+        <img src="Assets/rock.png" class="game-move">
+      </button>
 
-    <button class="player" onclick="
-      playGame ('Paper');
-    "><img src="Assets/paper.png" class="game-move"></button>
+      <button class="player" >
+        <img src="Assets/paper.png" class="game-move js-paper-button">
+      </button>
 
-    <button class="player" onclick="
-      playGame ('Scissors');
-    "><img src="Assets/scissors.png" class="game-move"></button>
+      <button class="player">
+        <img src="Assets/scissors.png" class="game-move js-scissors-button">
+      </button>
     </div>
 
     <p class="js-result result"></p>
     <p class="js-move"></p>
     <p class="js-score"></p>
 
-    <button class="game-reset" onclick="
-    score.wins = 0;
-    score.losses = 0;
-    score.ties = 0;
-    localStorage.removeItem('score');
-    updateScoreElement ();
-    ">Reset</button>
+    <button class="game-reset js-game-reset">Reset</button>
 
-    <button class="auto-play-button"
-    onclick="
-      autoPlay();
+    <button class="auto-play-button js-autoplay">
+      Autoplay
+    </button>
 
-    ">Autoplay</button>
-
-    <script src="script.js">
-      
-    </script>
+    <p class="reset-confirm js-reset-confirmation"></p>
+    <script src="script.js"></script>
   </body>
 </html>
