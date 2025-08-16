@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Log in</title>
+  <link rel="stylesheet" href="form.css">
+</head>
+<body>
+  <div class="content">
+  <h1>User Login</h1>
+  <form id="register">
+    Name: <input type="text" id="name" placeholder="Your name">
+    Email: <input type="email" id="email" placeholder="abc@gmail.com">
+    Password: <input type="password" id="password" placeholder="password">
+    <button type="submit" id="but">Log in</button>
+  </form>
+  <p id="message"></p>
+  </div>
+
+  <script>
+    const form= document.getElementById("register")
+    const message= document.getElementById("message")
+
+    form.addEventListener("submit",function(event){
+      event.preventDefault();
+
+    const name= document.getElementById("name");
+    const email= document.getElementById("email");
+    const password= document.getElementById("password");
+
+    let valid = true;
+    message.textContent="";
+
+    //for name
+    if (name.value.trim() === "") {
+      name.style.borderColor = "red";
+      valid = false;
+    }
+    else{
+      name.style.borderColor = "green";
+    }
+
+    //for email
+    if (email.value.trim() === ""||
+    !email.value.includes("@")||
+    !email.value(".")){
+      email.style.borderColor = "red";
+      valid = false;
+    }
+    else {
+      email.style.borderColor = "green";
+    }
+
+    //for password
+    if (password.value.trim() ===""||
+  password.value.trim().length<8){
+    password.style.borderColor = "red";
+  }
+  else {
+    password.borderColor = "green";
+  }
+
+
+    // const but =document.getElementById('but')
+    // but.addEventListener('mouseover', function(){
+    //   but.style.backgroundColor='grey';
+    // })
+    // but.addEventListener('mouseout', function(){
+    //   but.style.backgroundColor='';
+    // })
+    
+    if(name.value.trim()===""||email.value.trim()===""||password.value.trim()==="")
+    {
+      message.textContent="All fields are required to log in"
+      message.style.color="red";
+      return;
+    }
+
+    if(!email.value.trim().includes("@")||!email.value.trim().includes("."))
+    {
+      message.textContent="Invalid email";
+      message.style.color="red";
+      return;
+    }
+
+    if(password.value.length<8)
+    {
+      message.textContent="Password must be at least 8 characters";
+      message.style.color="red";
+      return;
+    }
+
+    message.textContent="Log in successful";
+    message.style.color="green";
+    form.reset();
+
+  });
+  </script>
+</body>
+</html>

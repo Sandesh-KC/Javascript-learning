@@ -1,0 +1,51 @@
+*
+{
+  margin: 0;
+  padding: 0;
+}
+h1
+{
+  font-family: 'Courier New', Courier, monospace;
+  background-color: black;
+  color: white;
+}
+body
+{
+  margin-top: 55px;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: top;
+  background-color: teal;
+}
+.content
+{
+  background: lightblue;
+  padding: 5px 7px;
+  border-radius: 10px; 
+  text-align: center;
+  width: 300px;
+}
+#register
+{
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+}
+#register input
+{
+  padding: 5px;
+  border-radius: 4px;
+}
+#register button
+{
+  padding: 4px;
+  margin-top: 20px;
+  background: black;
+  color: white;
+  border-radius: 20px;
+}
+#but:hover
+{
+  background-color: darkkhaki;
+}

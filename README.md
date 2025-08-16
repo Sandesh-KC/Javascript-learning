@@ -5,7 +5,8 @@ This repository contains my practice codes and experiments as I learn JavaScript
 ## Projects
 
 - **Calculator-basic**: A simple calculator with UI and basic arithmetic.
-- **RockPaperScissors game**: Still in progress.
+- **RockPaperScissors game**: A simple game that stores your score, and also has feature to autoplay.
+- **Log In page**: A log in page with js validation.
   
 ## Notes
 
